@@ -1,0 +1,185 @@
+<meta charset="UTF-8"> 
+<div th:fragment="header">
+<link rel="stylesheet" href="../../css/footer.css?v=170509" th:href="@{/css/footer.css?v=170509}"/>	
+<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css"/>
+<style>
+	#ulclass div{
+		font-size: 12px;
+		height: 20px;
+		min-width: 20px;
+		border-radius: 10px;
+	    display: inline-block;
+	    background-color: #ed6b75;
+	    line-height: 20px;
+		padding: 0 2px;
+	    text-align: center;
+	    color: white;
+	    position: absolute;
+	    top: 5px;
+	    /*margin-left: 4px;*/
+	}
+</style>
+<div class="top_tip">
+    <div class="trip-left">
+        <span class="contact-type">客服热线：0571-88076916</span>
+        <!--<ul>-->
+        <!--<li>-->
+        <!--<a href="#">-->
+        <!--<span class="fa-stack ">-->
+        <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+        <!--<i class="fa fa-wechat fa-stack-1x fa-inverse"></i>-->
+        <!--</span>-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="#">-->
+        <!--<span class="fa-stack ">-->
+        <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+        <!--<i class="fa fa-qq fa-astack-1x fa-inverse"></i>-->
+        <!--</span>-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a href="#">-->
+        <!--<span class="fa-stack ">-->
+        <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+        <!--<i class="fa fa-weibo fa-stack-1x fa-inverse"></i>-->
+        <!--</span>-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+    </div>
+    <div class="trip-right">
+        <a href="#" class="trip-code" id="loginTmcName"></a>
+        <a href="#" class="trip-code">|</a>
+        <a href="javascrpt:void(0);" class="trip-help" id="secedeControl">退出控制</a> 
+    </div>
+</div>
+
+<div class="header">
+   
+   <p class="logo"><a href="/main"><img id="tmcLogoImg" src="../../images/logo.png" width="auto" height="70"></a></p>
+    <ul class="nav navbar-nav" id="ulclass">
+   		<li ><a href="/flight/ticketSearch" >机票</a></li>
+   		<li ><a href="/hotel/search" >酒店</a></li>
+   		<li ><a href="/train/index" >火车票</a></li>
+    	<li ><a href="/car/carSearch" >用车</a></li>
+        <!-- <li id="buildControl"><a href="javascrpt:void(0);"></a></li>-->
+    	<li role="presentation" class="dropdown">
+    		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >订单管理<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li ><a href="/order/flightOrder"   >国内机票订单</a></li>
+                <li><a href="/order/hotelOrder" >酒店订单</a></li>
+                <li ><a href="/order/carOrder" >租车订单</a></li>
+                <li ><a href="/order/trainOrder" >火车订单</a></li>
+            </ul>
+    	</li>
+    	<li ><a href="/main" >管理中心</a></li>
+    	 <li ><a href="/user/message" >消息<div  class="hidden" id="noticeNumber"></div></a></li> 
+        <li role="presentation" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="margin-right: 10px;margin-top: 3px;"></i><span id="loginName"></span> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li id="logoutButton"><a href="#">退出</a></li>
+            </ul>
+        </li>
+        
+        <!--<li id="cone">
+        	<a  id="context" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >消息<span class="caret"></span></a>
+        	
+        </li>-->
+    </ul>
+<!--<div id="popu" style="width: 150px;height: 70px;background: red;position: absolute;top: 70px;right: 1px;border-radius: 10px;display:none;z-index: 999;"></div>-->
+</div>
+
+
+
+
+
+
+<!--//------tmc客人出行提醒  左侧拉--------------->
+<div id="leftNavOut" class="">
+	<img style="cursor: pointer;" src="../../images/leftNavOut.png"/>
+</div>
+
+
+<div id="" class="leftNav">
+	<div id="leftNavHead">
+		
+		<img id="leftNavIn" style="cursor: pointer;" src="../../images/leftNavIn.png"/>
+		<span>客户出行提示</span>
+		<!--<div style="clear: both;"></div>-->
+	</div>
+	
+	<div id="leftNavContent">
+		<div id="scrollBar">
+			
+		</div>
+		<div id="contentRight">
+			
+
+		</div>
+		<div style="clear: both;"></div>
+	
+	</div>
+	
+</div>
+ 
+ <!----------------右侧拉----------------------->
+ 
+ <div id="rightNavOut" >
+	<img style="cursor: pointer;" src="../../images/rightNavOut.png"/>
+</div>
+
+
+<div id="" class="rightNav">
+	<div id="rightNavHead">
+		<img id="rightNavIn" style="cursor: pointer;" src="../../images/rightNavIn.png"/>
+	</div>
+	<div style="clear: both;"></div>
+	<div class="navHeadList">
+		<ul class="navUl">
+			<li class="bottomColor" value="5">预留中<div id="YL" class="hidden">0</div></li>
+			<li class="pad" value="0" state="2">申请改签<div id="GQ" class="hidden">0</div></li>
+			<li class="pad" value="0" state="1">申请退票<div id="TP" class="hidden">0</div></li>
+			<li value="0">待支付<div id="DZF" class="hidden">0</div></li>
+			<li class="pad" value="1">出票失败<div id="SB" class="hidden">0</div></li>
+		</ul>
+	</div>
+	
+	<div id="rightNavContent">
+		
+		<div id="contentRight2">
+			
+		</div>
+		<!--<div id="scrollBar2">
+			
+		</div>-->
+		<div style="clear: both;"></div>
+	
+	</div>
+	<!--滚动条-->
+	
+</div>
+
+
+	<!-- 消息详情模态框 -->
+	<div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"style="top: 200px;">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel"style="margin-left: 250px;">消息详情</h4>
+	      </div>
+	      <div class="modal-body" style="text-align: center;" id="con">
+	        
+	      </div>
+	      <div class="modal-footer">
+	      	 <button type="button" class="btn btn-default" data-dismiss="modal" id="btnSave">关闭</button>
+        	 <!--<button type="button" class="btn btn-primary" id="btnSave">保存</button>-->
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+
